@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCOJsmbZbfxJTNmxjx45497_rvXfjX3B_0",
+    authDomain: "accounthandler-a5dd7.firebaseapp.com",
+    databaseURL: "https://accounthandler-a5dd7.firebaseio.com",
+    projectId: "accounthandler-a5dd7",
+    storageBucket: "accounthandler-a5dd7.appspot.com",
+    messagingSenderId: "201167872062"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="201167872062-icnnnduosdn6jpa6p7jdnr39bs7ir54q.apps.googleusercontent.com">
+</head>
+<body>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1> Works!</h1>
+        </div>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <a href="#" onclick="signOut();">Sign out</a>
+
+        
+    </div>
+
+</body>
+<script>
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+                console.log('User signed out.');
+            });
+        }
+    </script>
+</html>
